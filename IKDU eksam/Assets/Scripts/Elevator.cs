@@ -9,10 +9,17 @@ public class Elevator : MonoBehaviour
     [SerializeField] private Vector3 locationB;
     [SerializeField] private Transform transform;
     private bool active = false;
+    private bool locked = true;
 
+    public void Unlock()
+    {
+        locked = false;
+    }
+     
     private void OnCollisionEnter(Collision collision) // Making it so that when elevator starts collision with gameObject tagged with "Player", active = true
     {
         if (collision.gameObject.tag != "Player") return;
+        if (locked) return;
         active = true;
     }
 
