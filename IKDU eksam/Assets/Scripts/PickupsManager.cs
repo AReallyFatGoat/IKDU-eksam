@@ -4,19 +4,17 @@ using UnityEngine;
 
 public class PickupsManager : MonoBehaviour
 {
-    private int coinsCollected = 0;
-    private List<Coin>[] coinLists=new List<Coin>[3];
+    private List<Coin>[] coinLists=new List<Coin>[3]; // Making an array of lists, for the purpose of storing coins to each floor
     [SerializeField]private Elevator Elevator0;
     [SerializeField]private Elevator Elevator1;
     [SerializeField]private Elevator Elevator2;
     [SerializeField]private int coinCount;
 
-    public void AddCoin(Coin coin)
+    public void AddCoin(Coin coin) // Adds a coin to the corresponding list in the coinlist array.
     {
-        coinsCollected++;
         coinLists[coin.floor].Add(coin);
 
-        if (coinLists[0].Count >= coinCount)
+        if (coinLists[0].Count >= coinCount) // Unlocks the elevator when the count in the list is equal to or exceeds the variable "coinCount"
         {
             Elevator0.Unlock();
         }

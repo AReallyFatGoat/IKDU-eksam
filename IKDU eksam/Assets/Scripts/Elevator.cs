@@ -11,7 +11,7 @@ public class Elevator : MonoBehaviour
     private bool active = false;
     private bool locked = true;
 
-    public void Unlock()
+    public void Unlock() // Sets "locked" to false
     {
         locked = false;
     }

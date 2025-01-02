@@ -5,7 +5,6 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private Transform transform;
     [SerializeField] private int speed;
     private Rigidbody rb;
     private Vector3 movement;
